@@ -573,12 +573,12 @@ Codeunit 80149 "Irpf"
             GenJnlLine."Applies-to Bill No." := SalesHeader."Applies-to Bill No.";
             GenJnlLine.CopyFromSalesHeaderPayment(SalesHeader);
             IF SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice THEN BEGIN
-                GenJnlLine.Amount := +TotalRetentionGE;
-                GenJnlLine."Source Currency Amount" := +TotalRetentionGE;
-            END;
-            IF SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo" THEN BEGIN
                 GenJnlLine.Amount := -TotalRetentionGE;
                 GenJnlLine."Source Currency Amount" := -TotalRetentionGE;
+            END;
+            IF SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo" THEN BEGIN
+                GenJnlLine.Amount := TotalRetentionGE;
+                GenJnlLine."Source Currency Amount" := TotalRetentionGE;
             END;
             GenJnlLine."ID Type" := SalesHeader."ID Type";
             IF SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice THEN BEGIN
@@ -1111,9 +1111,9 @@ Codeunit 80149 "Irpf"
             END;
             GenJnlLine."Document Type" := GenJnlLine."Document Type"::" ";
             if SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice Then
-                GenJnlLine."Document Type" := GenJnlLine."Document Type"::Invoice;
+                GenJnlLine."Document Type" := GenJnlLine."Document Type"::Payment;
             if SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo" Then
-                GenJnlLine."Document Type" := GenJnlLine."Document Type"::"Credit Memo";
+                GenJnlLine."Document Type" := GenJnlLine."Document Type"::" ";
             GenJnlLine."Bal. Account Type" := GenJnlLine."Bal. Account Type"::"G/L Account";
             GenJnlLine."Bal. Account No." := GLAccountGE;
             GenJnlLine."Retention IRPF" := TRUE;
