@@ -9,17 +9,17 @@ Pageextension 95156 SubFormCrmemIrpf extends "Purch. Cr. Memo Subform"
         addbefore("Line Amount")
         {
 
-            field("% retención (BE)"; Rec."% retención (BE)") { ApplicationArea = All; Visible = False; }
+            field("% retención (BE)"; Rec."% retención (BE)") { ApplicationArea = All; Visible = be; }
 
 
-            field("Importe retención (BE)"; Rec."Importe retención (BE)") { ApplicationArea = All; Visible = False; }
+            field("Importe retención (BE)"; Rec."Importe retención (BE)") { ApplicationArea = All; Visible = be; }
 
 
-            field("% retención (IRPF)"; Rec."% retención (IRPF)") { ApplicationArea = All; }
+            field("% retención (IRPF)"; Rec."% retención (IRPF)") { ApplicationArea = All; Visible = Ret; }
 
 
-            field("Importe retención (IRPF)"; Rec."Importe retención (IRPF)") { ApplicationArea = All; }
-            field("Referencia Catastral"; Rec."Ref. catastral inmueble SII") { ApplicationArea = All; }
+            field("Importe retención (IRPF)"; Rec."Importe retención (IRPF)") { ApplicationArea = All; Visible = Ret; }
+            field("Referencia Catastral"; Rec."Ref. catastral inmueble SII") { ApplicationArea = All; Visible = Ret; }
         }
         modify(Control47)
         {

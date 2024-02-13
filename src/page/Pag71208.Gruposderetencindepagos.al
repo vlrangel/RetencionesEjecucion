@@ -1,7 +1,11 @@
 /// <summary>
 /// Page Grupos de retención de pagos (ID 7001198).
 /// </summary>
+<<<<<<< HEAD:src/page/Pag71208.Gruposderetencindepagos.al
 Page 71208 "Grupos de retención de pagos"
+=======
+Page 80159 "Grupos de retención de pagos"
+>>>>>>> a9ee88a3eea46a4406956a6351f27f14826149ef:src/page/Pag7001208.Gruposderetencindepagos.al
 {
 
     Caption = 'Grupos de retención de pagos';
