@@ -3,7 +3,7 @@
 /// <summary>
 /// Table 'Mov. retención de pagos (ID 7001173).
 /// </summary>
-table 7001232 "Mov. retención de pagos"
+table 71232 "Mov. retención de pagos"
 {
 
     //CaptionML=[ENU=Mov. retención de pagosy;

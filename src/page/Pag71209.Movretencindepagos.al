@@ -3,7 +3,7 @@
 /// <summary>
 /// Page Mov. retención de pagos (ID 7001199).
 /// </summary>
-Page 7001209 "Mov. retención de pagos"
+Page 71209 "Mov. retención de pagos"
 {
 
     Caption = 'Mov. retención de pagos';

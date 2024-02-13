@@ -2,7 +2,7 @@
 /// <summary>
 /// Table Grupo de retención de pagos (ID 7001171).
 /// </summary>
-table 7001231 "Grupo de retención de pagos"
+table 71231 "Grupo de retención de pagos"
 {
     //CaptionML=[ENU=Payments on Hold Group;
     Caption = 'Grupo de retención de pagos';
