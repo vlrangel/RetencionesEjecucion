@@ -1,0 +1,28 @@
+{
+  "id": "d1238390-627c-43d0-a2d7-7840a53d773c",
+  "name": "Irpf",
+  "publisher": "MaybeCloud",
+  "version": "1.0.0.2",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://www.maybecloud.es//",
+  "logo": "res/logoMaybe.jpg",
+  "dependencies": [
+    
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "23.0.0.0",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "12.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}
