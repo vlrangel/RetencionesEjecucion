@@ -13,7 +13,7 @@ pageextension 95162 CustomerIRPF extends "Customer Card"
     {
         addlast(content)
         {
-            group(Irpf)
+            group(Retenciones)
             {
                 field("Código grupo retención (BE)"; Rec."Código grupo retención (BE)")
                 {
@@ -38,16 +38,30 @@ pageextension 95162 CustomerIRPF extends "Customer Card"
             Action("Movimientos retención")
             {
                 ApplicationArea = All;
+
                 RunObject = Page "Mov. retención de pagos";
                 RunPageLink = Type = CONST(Customer),
                                   "No." = FIELD("No.");
                 Promoted = true;
                 Image = ReturnRelated;
-                PromotedCategory = Process;
+                PromotedCategory = Category9;
             }
-
-
         }
+
+
+
+
+
+
+
+        // addlast(navigation)
+        // {
+        //     actionref("Movimientos retención"; Movimientosretencion)
+        //     {
+
+        //     }
+        // }
+
 
 
     }

@@ -5,12 +5,16 @@ pageextension 95157 VendorIrpfCard extends "Vendor Card"
 {
     layout
     {
-        addafter("Prices Including VAT")
+        addlast(content)
         {
-            Field("Código grupo retención (BE)"; Rec."Código grupo retención (BE)") { ApplicationArea = All; }
+            group(Retenciones)
+            {
 
-            field("Código grupo retención (IRPF)"; Rec."Código grupo retención (IRPF)") { ApplicationArea = All; }
 
+                Field("Código grupo retención (BE)"; Rec."Código grupo retención (BE)") { ApplicationArea = All; }
+
+                field("Código grupo retención (IRPF)"; Rec."Código grupo retención (IRPF)") { ApplicationArea = All; }
+            }
 
         }
 
