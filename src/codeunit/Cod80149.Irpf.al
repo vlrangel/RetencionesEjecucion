@@ -1281,18 +1281,20 @@ Codeunit 80149 "Irpf"
         AmountRoundingPrecision: Decimal;
     BEGIN
 
-        SalesHeader.GET(Rec."Document Type", Rec."Document No.");
-        IF SalesHeader."Currency Code" = '' THEN BEGIN
-            GeneralLedgerSetup.GET;
-            GeneralLedgerSetup.TESTFIELD("Amount Rounding Precision");
-            AmountRoundingPrecision := GeneralLedgerSetup."Amount Rounding Precision";
-        END
-        ELSE BEGIN
-            Currency.GET(SalesHeader."Currency Code");
-            Currency.TESTFIELD("Amount Rounding Precision");
-            AmountRoundingPrecision := Currency."Amount Rounding Precision";
-        END;
-        Rec.VALIDATE("Importe retención (BE)", ROUND(Rec."Line Amount" * Rec."% retención (BE)" / 100, AmountRoundingPrecision));
+        if SalesHeader.GET(Rec."Document Type", Rec."Document No.") then begin
+            IF SalesHeader."Currency Code" = '' THEN BEGIN
+                GeneralLedgerSetup.GET;
+                GeneralLedgerSetup.TESTFIELD("Amount Rounding Precision");
+                AmountRoundingPrecision := GeneralLedgerSetup."Amount Rounding Precision";
+            END
+            ELSE BEGIN
+                Currency.GET(SalesHeader."Currency Code");
+                Currency.TESTFIELD("Amount Rounding Precision");
+                AmountRoundingPrecision := Currency."Amount Rounding Precision";
+            END;
+            Rec.VALIDATE("Importe retención (BE)", ROUND(Rec."Line Amount" * Rec."% retención (BE)" / 100, AmountRoundingPrecision));
+        end;
+
     END;
 
     [EventSubscriber(ObjectType::Table, 37, 'OnAfterValidateEvent', '% retención (IRPF)', false, false)]
@@ -1304,18 +1306,19 @@ Codeunit 80149 "Irpf"
         AmountRoundingPrecision: Decimal;
     BEGIN
 
-        SalesHeader.GET(Rec."Document Type", Rec."Document No.");
-        IF SalesHeader."Currency Code" = '' THEN BEGIN
-            GeneralLedgerSetup.GET;
-            GeneralLedgerSetup.TESTFIELD("Amount Rounding Precision");
-            AmountRoundingPrecision := GeneralLedgerSetup."Amount Rounding Precision";
-        END
-        ELSE BEGIN
-            Currency.GET(SalesHeader."Currency Code");
-            Currency.TESTFIELD("Amount Rounding Precision");
-            AmountRoundingPrecision := Currency."Amount Rounding Precision";
-        END;
-        Rec.VALIDATE("Importe retención (IRPF)", ROUND(Rec."Line Amount" * Rec."% retención (IRPF)" / 100, AmountRoundingPrecision));
+        if SalesHeader.GET(Rec."Document Type", Rec."Document No.") then begin
+            IF SalesHeader."Currency Code" = '' THEN BEGIN
+                GeneralLedgerSetup.GET;
+                GeneralLedgerSetup.TESTFIELD("Amount Rounding Precision");
+                AmountRoundingPrecision := GeneralLedgerSetup."Amount Rounding Precision";
+            END
+            ELSE BEGIN
+                Currency.GET(SalesHeader."Currency Code");
+                Currency.TESTFIELD("Amount Rounding Precision");
+                AmountRoundingPrecision := Currency."Amount Rounding Precision";
+            END;
+            Rec.VALIDATE("Importe retención (IRPF)", ROUND(Rec."Line Amount" * Rec."% retención (IRPF)" / 100, AmountRoundingPrecision));
+        end;
     END;
 
     [EventSubscriber(ObjectType::Table, 37, 'OnAfterValidateEvent', 'Line Amount', false, false)]

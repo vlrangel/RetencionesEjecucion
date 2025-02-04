@@ -167,8 +167,8 @@ Pageextension 95159 SubPageInvoiceIrpf extends "Sales Invoice Subform"
 
     Procedure MostrarRetenciones(pRet: Boolean; pBe: Boolean);
     begin
-        Be := pBe;
         Ret := pRet;
+        Be := pBe;
         CurrPage.UPDATE(false);
     end;
 }
