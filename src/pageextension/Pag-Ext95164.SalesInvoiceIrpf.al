@@ -14,7 +14,7 @@ pageextension 95164 SalesInvoiceIrpf extends "Sales Invoice"
                 trigger OnValidate()
                 begin
                     if (Rec."Código grupo retención (BE)" <> '') then begin
-                        CurrPage.SalesLines.Page.MostrarRetenciones(true, false);
+                        CurrPage.SalesLines.Page.MostrarRetenciones(false, true);
                     end;
                 end;
             }
@@ -27,7 +27,7 @@ pageextension 95164 SalesInvoiceIrpf extends "Sales Invoice"
                 trigger OnValidate()
                 begin
                     if (Rec."Código grupo retención (IRPF)" <> '') then begin
-                        CurrPage.SalesLines.Page.MostrarRetenciones(false, true);
+                        CurrPage.SalesLines.Page.MostrarRetenciones(true, false);
                     end;
                 end;
             }
@@ -38,10 +38,10 @@ pageextension 95164 SalesInvoiceIrpf extends "Sales Invoice"
     trigger OnAfterGetCurrRecord()
     begin
         if (Rec."Código grupo retención (BE)" <> '') then begin
-            CurrPage.SalesLines.Page.MostrarRetenciones(FALSE, true);
+            CurrPage.SalesLines.Page.MostrarRetenciones(false, true);
         end;
         if (Rec."Código grupo retención (IRPF)" <> '') then begin
-            CurrPage.SalesLines.Page.MostrarRetenciones(TRUE, false);
+            CurrPage.SalesLines.Page.MostrarRetenciones(true, false);
         end;
     end;
 }
@@ -63,10 +63,10 @@ pageextension 95165 Contratos extends "Sales Order"
     trigger OnAfterGetCurrRecord()
     begin
         if (Rec."Código grupo retención (BE)" <> '') then begin
-            CurrPage.SalesLines.Page.MostrarRetenciones(true, false);
+            CurrPage.SalesLines.Page.MostrarRetenciones(false, true);
         end;
         if (Rec."Código grupo retención (IRPF)" <> '') then begin
-            CurrPage.SalesLines.Page.MostrarRetenciones(false, true);
+            CurrPage.SalesLines.Page.MostrarRetenciones(true, false);
         end;
     end;
 }

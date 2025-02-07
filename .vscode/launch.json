@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "tenant": "fe659371-d016-40ff-a31c-a52888650f25",
-            "environmentName": "DesarrolloTech4Plus2",
+            "environmentName": "CopiaProd241226",
             "breakOnError": "All",
             "launchBrowser": true,
             "schemaUpdateMode": "Synchronize",
